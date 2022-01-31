@@ -70,19 +70,19 @@ try {
         }
     },
     login: async(req: Request, res: Response) => {
-try {
-    const { account, password } = req.body
+        try {
+        const { account, password } = req.body
 
-    const user = await Users.findOne({account})
-    if(!user) return res.status(400).json({msg: 'This account does not exist.'})
+        const user = await Users.findOne({account})
+        if(!user) return res.status(400).json({msg: 'This account does not exist.'})
 
-    // If user exist
-    loginUser(user, password, res)
+        // If user exist
+        loginUser(user, password, res)
 
-     } catch (err: any) {
-     return res.status(500).json({msg: err.message})
-     }
-    },
+        } catch (err: any) {
+        return res.status(500).json({msg: err.message})
+        }
+        },
     logout: async(req: Request, res: Response) => {
         try {
             res.clearCookie('refreshtoken', { path: `/api/refresh_token`})
@@ -91,7 +91,7 @@ try {
         } catch (err: any) {
         return res.status(500).json({msg: err.message})
         }
-    },
+      },
     refreshToken: async(req: Request, res: Response) => {
         try {
             const rf_token = req.cookies.refreshtoken

@@ -23,9 +23,9 @@ export const validRegister = async (req: Request, res: Response, next: NextFunct
 
     if(errors.length > 0){
         return res.status(400).json({msg: errors})
-    }else{
-        next();
     }
+    
+    next();
 }
 
 export function validPhone(phone: string){

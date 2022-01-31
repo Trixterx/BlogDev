@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        default: 'normal'
+        default: 'register' // login
     }
 }, {
         timestamps: true
