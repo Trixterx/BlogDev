@@ -8,5 +8,9 @@ router.post('/register', validRegister, authCtrl.register)
 
 router.post('/active', authCtrl.activeAccount)
 
+router.post('/login', authCtrl.login)
+
+router.get('/logout', authCtrl.logout)
+
 
 export default router;
