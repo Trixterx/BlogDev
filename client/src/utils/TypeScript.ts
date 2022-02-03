@@ -1,4 +1,4 @@
 export interface IParams {
-    page: string
-    slug: string
-}
+    page?: string
+    slug?: string
+  }
