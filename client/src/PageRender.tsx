@@ -2,7 +2,6 @@ import React from 'react';
 import { useParams } from 'react-router-dom'
 import { IParams } from './utils/TypeScript'
 import NotFound from './components/global/NotFound'
-import Page from 'twilio/lib/base/Page';
 
 const generatePage = (name: string) => {
 
