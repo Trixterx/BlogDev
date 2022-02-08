@@ -8,5 +8,5 @@ mongoose.connect(`${URI}`, {
     useUnifiedTopology: true
 } as ConnectOptions, (err) => {
     if(err) throw err;
-    console.log('Mongodb connection')
+    console.log('MongoDB connection')
 })
