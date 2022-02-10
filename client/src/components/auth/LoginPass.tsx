@@ -15,29 +15,33 @@ const LoginPass = () => {
 
   return (
     <form>
-
-      <div className="form-group">
-        <label htmlFor="account">Email / Phone number</label>
+      <div className="form-group mb-3">
+        <label htmlFor="account" className="form-label">
+          Email / Phone number
+          </label>
         <input type="text" className="form-control" id="account"
         name="account" value={account} onChange={handleChangeInput}/>
       </div>
-
-      <div className="form-group">
-        <label htmlFor="password">Password</label>
-
+      <div className="form-group mb-3">
+        <label htmlFor="password" className="form-label">
+          Password
+        </label>
         <div className="pass">
             <input type={typePass ? "text" : "password"} 
             className="form-control" 
             id="password"
             name="password" value={password} 
-            onChange={handleChangeInput}/>
+            onChange={handleChangeInput}
+            />
           <small onClick={() => setTypePass(!typePass)}>
             {typePass ? 'Hide' : 'Show'}
           </small>
         </div>
-
       </div>
-
+      <button type="submit" className="btn btn-dark w-100 mt-1" 
+      disabled={(account && password) ? false : true}>
+        Login
+      </button>
     </form>
   );
 };
