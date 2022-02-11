@@ -6,7 +6,8 @@ import { IUserLogin } from '../../utils/TypeScript'
 import { postAPI } from '../../utils/FetchData'
 
 
-export const login = (userLogin: IUserLogin) => async (dispatch: Dispatch<IAuthType | IAlertType>) => {
+export const login = (userLogin: IUserLogin) => 
+async (dispatch: Dispatch<IAuthType | IAlertType>) => {
     try {
         dispatch({ type: ALERT, payload: { loading: true } })
 
@@ -20,9 +21,10 @@ export const login = (userLogin: IUserLogin) => async (dispatch: Dispatch<IAuthT
             }
         })
 
-        dispatch({ type: ALERT, payload: { loading: false } })
+        dispatch({ type: ALERT, payload: { success: "Login successfull!" } })
+
     } catch (err: any) {
-        console.log(err.response.data.msg)
+        dispatch({ type: ALERT, payload: { errors: err.response.data.msg } })
     }
 
 }
