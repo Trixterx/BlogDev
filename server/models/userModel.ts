@@ -19,8 +19,8 @@ const userSchema = new mongoose.Schema({
         requred: [true, "Please add your password."]
     },
     avatar: {
-        type: String
-    // default: 'img url'
+        type: String,
+        default: 'https://i.imgur.com/XNtbIp3.png'
     },
     role: {
         type: String,
