@@ -25,9 +25,9 @@ const Login = () => {
       </small>
 
       <p>
-        Don't have a account?
+        {`Don't have a account? `}
         <Link to={`/register`} style={{color : 'crimson'}}>
-          {` Register Now!`}
+          Register Now!
         </Link>
       </p>
     </div>
