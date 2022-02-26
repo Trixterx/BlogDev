@@ -17,7 +17,7 @@ const Menu = () => {
 
     const afLoginLinks = [
       { label: 'Home', path: '/home' },
-      { label: 'CreateBlog', path: '/create_blog' }
+      { label: 'CreatePost', path: '/create_blog' }
     ]
 
     const navLinks = auth.access_token ? afLoginLinks : bfLoginLinks
@@ -45,8 +45,12 @@ const Menu = () => {
           </span>
 
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link className="dropdown-item" to="/profile">Profile</Link></li>
-            <li><hr className="dropdown-divider" /></li>
+            <li>
+              <Link className="dropdown-item"
+              to={`/profile/${auth.user._id}`}
+              >
+                Profile
+              </Link></li>
             <li>
             <Link className="dropdown-item" to="/"
               onClick={() => dispatch(logout())}>
