@@ -9,6 +9,7 @@ import Footer from './components/global/Footer'
 import { Alert } from './components/alert/Alert'
 
 import { refreshToken } from './redux/actions/authAction'
+import { getHomeBlogs } from './redux/actions/blogAction'
 
 
 export const App = () => {
@@ -16,6 +17,7 @@ export const App = () => {
 
   useEffect(() => {
     dispatch(refreshToken())
+    dispatch(getHomeBlogs())
   },[dispatch])
 
   return (
